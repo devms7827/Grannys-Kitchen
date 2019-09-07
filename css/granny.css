@@ -1,0 +1,457 @@
+/* This is Granny's Kitchen Project Custom Stylesheet */
+/* 	Documentation: ================================================================================
+	#Project-Name:	Granny's Kitchen;
+	#Created-By:	Manas Soni;
+	#Date-Created:	04-Sept-2019;
+	#Last-Edited:	07-Sept-2019;
+*/
+
+/* Root Styles ====================================================================================*/
+
+:root {
+  --primary: #ef7998; /*rgb equivalent rgb(239,121,152)*/
+  --secondary: rgb(249, 228, 148);
+  --mainWhite: #fff;
+  --mainBlack: #000;
+  --transparent: rgba(249, 228, 148, 0.2);
+  --mainGrey: rgb(238, 238, 238);
+}
+
+body {
+  font-family: 'Kalam', cursive;	/* for the body content */
+  /* font-family: 'Pacifico', cursive;	/* for the headings */ 
+  background: var(--mainWhite);
+  color: var(--mainBlack);
+}
+
+.width-fix {
+	max-width: 80%;
+	margin-left: auto;
+    margin-right: auto;
+	/*this fix is used to remove the ugly white space enabling horizontal scrolling
+	on all devices, i used a js function which identified the overflow
+	space is coming from which tag and then that tag got displayed in 
+	console and then i applied this class in just the div befor cake item 1 */
+}
+
+/* Global Styles ------------------------- */
+
+.btn-primary {
+	color: var(--primary) !important;
+	border-color: var(--primary) !important;
+	background: var(--mainGrey) !important;
+	padding-top: .6rem;
+}
+
+.btn-primary:hover {
+	color: var(--mainBlack) !important;
+	background: var(--primary) !important;
+	box-shadow: -2px 2px 10px rgb(0,0,0,0.4);
+}
+
+.btn-secondary {
+	color: var(--mainBlack) !important;
+	font-size: 1.3rem;
+	padding-top: .6rem;
+	border-color: var(--mainBlack) !important;
+	background: var(--mainWhite);
+}
+
+.btn-secondary:hover {
+	color: var(--primary) !important;
+	background: var(--mainBlack) !important;
+	box-shadow: -2px 3px 10px rgb(239,121,152);
+}
+
+/* Header Section Styles ========================================================================*/
+
+/* Navbar styles---------------------- */
+
+.navbar-toggler {
+	outline: none !important;
+	/* removing navbar toggler default blue outline when clicking*/
+}
+
+.toggler-icon {
+	font-size: 2.5rem;
+	color: var(--primary);
+}
+
+.nav-link {
+	color: var(--primary);
+	font-weight: 700;
+	font-size: 1.5rem;
+	transition: all 1s ease-in-out;
+}
+
+.nav-link:hover {
+	color: var(--mainBlack);
+}
+
+/* Cart Styles---------------------- */
+
+.cart-info {
+	border: .1rem solid var(--mainBlack);
+	border-radius: .25rem;
+	padding: .4rem .6rem;
+	cursor: pointer;
+	color: var(--mainBlack);
+}
+
+.cart-info:hover {
+	background: var(--primary);
+	color: var(--mainBlack);
+	border-color: var(--primary);
+	box-shadow: -2px 2px 10px rgb(0,0,0,0.3);
+}
+
+.cart-info__icon {
+	color: var(--mainBlack);
+}
+
+.cart-info:hover .cart-info__icon {
+	color: var(--mainBlack);
+}
+
+/* cart  items styles ---------------- */
+
+.cart {
+	position: absolute;
+	min-height: 10rem;
+	background: rgba(255, 255, 255, 0.8);
+	top: 10%;
+	right: 0;
+	transition: all 0.3s ease-in-out;
+	width: 0;
+	overflow: hidden;
+}
+
+.show-cart {
+	padding: 2rem 1.5rem;
+	width: 18rem;
+	transform: rotateY(-360deg);	/* this will create a rotation*/
+}
+
+.cart-item {
+	transition: all 2s ease-in-out;
+}
+
+.cart-item-remove {
+	color: var(--primary);
+	transition: all .5s ease-in-out;
+}
+
+.cart-item-remove:hover {
+	color: var(--mainBlack);
+	transform: scale(1.1);
+}
+
+.cart-item-price {
+	font-size: 1rem;
+}
+
+/* Banner styles-------------------- */
+
+.banner-header {
+	/* min-height: calc(100vh - 76px); */
+	min-height: 100vh;
+	background: linear-gradient(var(--transparent), var(--transparent)) ,url('../images/banner_header_large-devices.jpg');
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	position: relative;
+}
+
+.banner-title {
+	color: var(--mainBlack);
+	margin-top: -4rem;
+}
+
+.banner-title__highlight {
+	color: var(--primary);
+	font-size: 4.5rem;
+}
+
+.banner-link {
+	color: var(--mainBlack);
+	font-size: 1.7rem;
+	padding-top: .9rem; /* this is just a fix for the text not aligning in center */
+	padding-left: 1rem;
+	padding-right: 1rem;
+	border: .2rem solid var(--mainBlack);
+}
+
+.banner-link:hover {
+	background: var(--mainBlack);
+	color: var(--primary);
+	box-shadow: -2px 3px 10px rgb(239,121,152)
+}
+
+
+/* About Section Styles ================================================================== */
+
+.para {
+	font-size: 1.2rem;
+}
+
+.about-img__container {
+	position: relative;
+}
+
+.about-img__container::before {
+	content: "";	/* since we have pseudo selector we always need to have content */
+	position: absolute;
+	top: -1.5em;
+	left: -1.7rem;
+	width: 100%;
+	height: 100%;
+	outline: 0.5rem solid var(--secondary);
+	z-index: -1;
+	transition: all 1s ease-in-out;
+}
+
+.about-img__container:hover::before {
+	top: 0;
+	left: 0;
+}
+
+/* Store Section Styles ================================================================ */
+
+.store {
+	background: var(--mainGrey);
+}
+
+.search-box {
+	background: var(--primary);
+	color: var(--mainBlack);
+}
+
+.single-item {
+	transition: all 0.3s linear;
+}
+
+.single-item:hover {
+	/* syntax:  x-axis, y-axis, blur-amount, color */
+	box-shadow: 0 10px 15px #000;
+}
+
+.img-container {
+	position: relative;
+	cursor: pointer;
+	overflow: hidden;
+}
+
+.store-img {
+	transition: all 1s ease-in-out;
+}
+
+.img-container:hover .store-img {
+	/* css for zooming into image */
+	transform: scale(1.2);
+}
+
+.store-item-icon {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	background: var(--secondary);
+	padding: .75rem;
+	border-top-left-radius: 1rem;
+	transition: all 1s ease-in-out;
+	/* moving cart img outside */
+	transform: translate(100%, 100%);
+}
+
+.img-container:hover .store-item-icon {
+	transform: translate(0, 0);
+}
+
+.store-item-icon:hover {
+	color: var(--primary);
+}
+
+
+/* Services Section Styles ==================================================================== */
+
+.services {
+	color: var(--mainWhite);
+	background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+	url('../images/servicesBcg.jpeg') fixed no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.service-title {
+	letter-spacing: 0.5rem;
+}
+
+.service-text {
+	font-size: 1.1rem;
+	word-spacing: 0.3rem;
+}
+
+/* Footer Section Styles ===================================================================== */
+
+.footer-title {
+	background: var(--mainBlack);
+}
+
+.footer-contact {
+	background: var(--mainGrey);
+	font-size: 1.4rem;
+}
+
+.footer-contact__title {
+	font-size: 2.5rem;
+}
+
+.footer-icon {
+	font-size: 2rem;
+	transition: all 0.5s ease-in-out;
+	color: var(--mainWhite);
+}
+
+.footer-icon__contact {
+	color: var(--mainBlack);
+}
+
+.footer-icon:hover {
+	color: var(--primary);
+}
+
+
+.footer-title__highlight {
+	color: var(--primary);
+	font-size: 3rem;
+}
+
+.footer-follow {
+	color: var(--mainWhite);
+	font-size: 1.5rem;
+}
+
+.footer-padding__fix {
+	padding-bottom: 1rem !important;
+}
+
+/* Css Fix Styles ========================================================== */
+
+.heading {
+	font-size: 3rem !important;
+	/* to increase the size of headings */
+}
+
+.nav-font__size {
+	font-size: 1.1rem !important;
+}
+
+h5 {
+    font-size: 1.55rem !important;
+}
+
+.nav-font-size {
+	font-size: 1rem !important;
+}
+
+.nav-pos__fix {
+	height: 4.75rem !important;
+	width: 100% !important;
+	background: var(--mainWhite);
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+.nav-burger__fix {
+	background: var(--mainWhite);
+	width: 100%;
+	/* border: 2px solid var(--primary);
+	border-top: 0 solid white; */
+	/* box-shadow: 0px 5px 10px -5px #333; */
+}
+
+@media (max-width: 991px) { 
+	.nav-burger__fix {
+		box-shadow: 0 7px 10px -5px #333;
+	}
+
+ }
+
+
+ @media (min-width: 992px) and (max-width: 1239px) {
+ 	.padding-fix___nav {
+ 		padding-left: 0 !important;
+ 		padding-right: 0 !important;
+ 	}
+ }
+
+ @media (min-width: 992px) and (max-width: 1079px) {
+ 	.mx-lg-5 {
+ 		margin-left: 2rem!important;
+ 		margin-right: 2rem!important;
+ 	}
+ }
+
+ @media (min-width: 992px) and (max-width: 1015px) {
+ 	.mx-lg-5 {
+ 		margin-left: 1rem!important;
+ 		margin-right: 1rem!important;
+ 	}
+ }
+
+ @media (max-width: 768px) {
+ 	.banner-title__highlight {
+ 		font-size: 3.5rem !important;
+ 	}
+
+ 	.heading {
+    	font-size: 2.5rem !important;
+	}
+ }
+
+ @media (max-width: 576px) {
+ 	.banner-title__highlight {
+ 		font-size: 3rem !important;
+ 	}
+
+ 	.heading {
+    	font-size: 2rem !important;
+	}
+ }
+
+ @media (min-width: 576px) and (max-width: 991px) {
+ 	.nav-link {
+ 		padding-left: 1rem !important;
+ 	}
+ }
+
+ @media (max-width: 576px) {
+ 	.footer-contact {
+    	font-size: 1.2rem !important;
+	}
+ }
+
+ @media (max-width: 400px) {
+ 	.banner-link {
+	    font-size: 1.2rem;
+	    padding-top: .7rem;
+	}
+ }
+
+
+/* Image Resposive css queries ============================= */
+
+/* Banner heading  */
+
+ @media (max-width: 1024px) {
+ 	.banner-header {
+		/* min-height: calc(100vh - 76px); */
+		min-height: 100vh;
+		background: linear-gradient(var(--transparent), var(--transparent)) ,
+		url('../images/banner_header_small-devices.jpg');
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		position: relative;
+	}
+ }
