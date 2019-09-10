@@ -3,7 +3,13 @@ A website for a confectionery store called Granny's Kitchen.
 
 Project Details:---------------------------------------
 
-Date Created: 07-Sept-2019 Project Name: Granny's Kitchen Created By: Manas Soni Email: manassoni7827@gmail.com
+Date Created: 07-Sept-2019
+
+Project Name: Granny's Kitchen
+
+Created By: Manas Soni
+
+Email: manassoni7827@gmail.com
 
 Technologies Used: HTML 5, CSS3, Bootstrap 4.3.1, JavaScript (minimal). Other tools: autoprefixer, font-swesome 5, unsplash, pixaby, etc.
 
