@@ -3,6 +3,8 @@ A website for a confectionery store called Granny's Kitchen.
 
 Project Details:---------------------------------------
 
+Live at: https://devms7827.github.io/grannys-kitchen/
+
 Date Created: 07-Sept-2019
 
 Project Name: Granny's Kitchen
